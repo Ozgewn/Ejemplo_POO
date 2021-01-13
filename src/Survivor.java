@@ -5,6 +5,7 @@ public class Survivor {
 	//Atributos
 	int vidas, estadoSalud;
 	String objetoActual;
+	boolean infectado;
 	
 	private static Scanner teclado=new Scanner(System.in);
 	
@@ -13,6 +14,7 @@ public class Survivor {
 		vidas=3;
 		estadoSalud=2; //0=tumbado, 1=herido, 2=saludable
 		this.objetoActual=objetoActual;
+		infectado=false;
 		
 	} //FIN METODO CONSTRUCTOR
 	
@@ -43,13 +45,52 @@ public class Survivor {
 	} //FIN METODO establecerEstadoSalud
 	
 	public void establecerObjeto(String objetoActual) {
-		if(objetoActual.equalsIgnoreCase("Caja de herramientas")) {
+		
+		switch(objetoActual) {
+		case "Caja de herramientas","caja de herramientas":
+			this.objetoActual=objetoActual;
+			System.out.println("Tu objeto actual es una caja de herramientas");
+			break;
+		case "Botiquin","Botiquín","botiquin","botiquín":
+			this.objetoActual=objetoActual;
+			System.out.println("Tu objeto actual es un botiquín");
+			break;
+		case "Llave","llave":
+			this.objetoActual=objetoActual;
+			System.out.println("Tu objeto actual es una llave");
+			break;
+		case "Linterna","linterna":
+			this.objetoActual=objetoActual;
+			System.out.println("Tu objeto actual es una linterna");
+			break;
+		default:
+			System.out.println("El objeto introducido no es válido, por favor intentelo de nuevo");
+			objetoActual=teclado.next();
+			establecerObjeto(objetoActual);
+			break;
+		} //FIN SWITCH
+		
+		/*if(objetoActual.equalsIgnoreCase("Caja de herramientas")) {
 			this.objetoActual=objetoActual;
 			System.out.println("Tu objeto actual es una caja de herramientas");
 		}else if(objetoActual.equalsIgnoreCase("Botiquin") || objetoActual.equalsIgnoreCase("Botiquín")) {
 			this.objetoActual=objetoActual;
 			System.out.println("Tu objeto actual es un Botiquín");
-		}
-	}
+		}else if(objetoActual.equalsIgnoreCase("Llave")) {
+			this.objetoActual=objetoActual;
+			System.out.println("Tu objeto actual es una llave");
+		}else if(objetoActual.equalsIgnoreCase("Linterna")) {
+			this.objetoActual=objetoActual;
+			System.out.println("Tu objeto actual es una linterna");
+		} */
+	} //FIN METODO establecerObjeto()
+	
+	public void esInfectado() {
+		if(infectado) {
+			System.out.println("El jugador está infectado");
+		}else {
+			System.out.println("El jugador no está infectado");
+		} //FIN IF_ELSE
+	} //FIN esInfectado()
 
 } //FIN CLASE
