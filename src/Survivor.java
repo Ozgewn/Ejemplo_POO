@@ -18,19 +18,28 @@ public class Survivor {
 		
 	} //FIN METODO CONSTRUCTOR
 	
+public Survivor() {
+		
+		vidas=3;
+		estadoSalud=2; //0=tumbado, 1=herido, 2=saludable
+		objetoActual="Linterna";
+		infectado=false;
+		
+	} //FIN METODO CONSTRUCTOR
+	
 	//METODOS
 	
-	public void mostrarVida() {
-		System.out.println("Al jugador le quedan " +vidas+ " vidas(cuelgues)");
+	public int getVida() {
+		return vidas;
 	} //FIN METODO mostrarVida()
 	
-	public void mostrarEstadoSalud() {
+	public String getEstadoSalud() {
 		if(estadoSalud==2) {
-			System.out.println("El jugador está saludable");
+			return "El jugador está saludable";
 		}else if(estadoSalud==1) {
-			System.out.println("El jugador está herido");
+			return "El jugador está herido";
 		}else {
-			System.out.println("El jugador está tumbado");
+			return "El jugador está tumbado";
 		} //FIN IF_ELSE
 	} //FIN METODO mostrarEstadoSalud()
 	
@@ -49,47 +58,38 @@ public class Survivor {
 		switch(objetoActual) {
 		case "Caja de herramientas","caja de herramientas":
 			this.objetoActual=objetoActual;
-			System.out.println("Tu objeto actual es una caja de herramientas");
 			break;
 		case "Botiquin","Botiquín","botiquin","botiquín":
 			this.objetoActual=objetoActual;
-			System.out.println("Tu objeto actual es un botiquín");
 			break;
 		case "Llave","llave":
 			this.objetoActual=objetoActual;
-			System.out.println("Tu objeto actual es una llave");
 			break;
 		case "Linterna","linterna":
 			this.objetoActual=objetoActual;
-			System.out.println("Tu objeto actual es una linterna");
 			break;
 		default:
-			System.out.println("El objeto introducido no es válido, por favor intentelo de nuevo");
-			objetoActual=teclado.next();
-			setObjeto(objetoActual);
+			this.objetoActual="Nada";
 			break;
 		} //FIN SWITCH
 		
-		/*if(objetoActual.equalsIgnoreCase("Caja de herramientas")) {
-			this.objetoActual=objetoActual;
-			System.out.println("Tu objeto actual es una caja de herramientas");
-		}else if(objetoActual.equalsIgnoreCase("Botiquin") || objetoActual.equalsIgnoreCase("Botiquín")) {
-			this.objetoActual=objetoActual;
-			System.out.println("Tu objeto actual es un Botiquín");
-		}else if(objetoActual.equalsIgnoreCase("Llave")) {
-			this.objetoActual=objetoActual;
-			System.out.println("Tu objeto actual es una llave");
-		}else if(objetoActual.equalsIgnoreCase("Linterna")) {
-			this.objetoActual=objetoActual;
-			System.out.println("Tu objeto actual es una linterna");
-		} */
 	} //FIN METODO establecerObjeto()
 	
-	public void esInfectado() {
-		if(infectado) {
-			System.out.println("El jugador está infectado");
+	public String getObjeto() {
+		
+		if(!objetoActual.equalsIgnoreCase("Nada")) {
+			return objetoActual;
 		}else {
-			System.out.println("El jugador no está infectado");
+			return "No tienes ningún objeto";
+		} //FIN IF_ELSE
+		
+	}//FIN METODO getObjeto()
+	
+	public String isInfectado(boolean infectado) {
+		if(infectado) {
+			return "El jugador está infectado";
+		}else {
+			return "El jugador no está infectado";
 		} //FIN IF_ELSE
 	} //FIN esInfectado()
 	

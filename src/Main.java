@@ -4,10 +4,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Survivor survi=new Survivor("Botiquín");
-		survi.mostrarEstadoSalud();
-		survi.mostrarVida();
+		survi.getEstadoSalud();
+		survi.getVida();
 		survi.setObjeto("Caja de herramientas");
-		survi.mostrarEstadoSalud();
+		survi.getEstadoSalud();
 		survi.setObjeto("asdasd");
 
 	} //FIN MAIN
