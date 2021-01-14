@@ -6,11 +6,9 @@ public class Main {
 		Survivor survi=new Survivor("Botiquín");
 		survi.mostrarEstadoSalud();
 		survi.mostrarVida();
-		survi.establecerEstadoSalud(7);
-		survi.establecerEstadoSalud(1);
-		survi.establecerObjeto("Caja de herramientas");
+		survi.setObjeto("Caja de herramientas");
 		survi.mostrarEstadoSalud();
-		survi.establecerObjeto("asdasd");
+		survi.setObjeto("asdasd");
 
 	} //FIN MAIN
 

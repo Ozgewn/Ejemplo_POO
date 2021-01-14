@@ -34,17 +34,17 @@ public class Survivor {
 		} //FIN IF_ELSE
 	} //FIN METODO mostrarEstadoSalud()
 	
-	public void establecerEstadoSalud(int estadoSalud) {
+	public void setEstadoSalud(int estadoSalud) {
 		if(estadoSalud<0 || estadoSalud>2) {
 			System.out.println("Estado de salud introducido no válido, por favor vuelva a intentarlo");
 			estadoSalud=teclado.nextInt();
-			establecerEstadoSalud(estadoSalud);
+			setEstadoSalud(estadoSalud);
 		}else {
 			this.estadoSalud=estadoSalud;
 		} //FIN IF_ELSE
 	} //FIN METODO establecerEstadoSalud
 	
-	public void establecerObjeto(String objetoActual) {
+	public void setObjeto(String objetoActual) {
 		
 		switch(objetoActual) {
 		case "Caja de herramientas","caja de herramientas":
@@ -66,7 +66,7 @@ public class Survivor {
 		default:
 			System.out.println("El objeto introducido no es válido, por favor intentelo de nuevo");
 			objetoActual=teclado.next();
-			establecerObjeto(objetoActual);
+			setObjeto(objetoActual);
 			break;
 		} //FIN SWITCH
 		
