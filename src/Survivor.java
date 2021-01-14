@@ -92,5 +92,13 @@ public class Survivor {
 			System.out.println("El jugador no está infectado");
 		} //FIN IF_ELSE
 	} //FIN esInfectado()
+	
+	public void curarse() {
+		if(estadoSalud<2 && estadoSalud>=0) {
+			estadoSalud++;
+		}else {
+			System.out.println("No necesitas curarte, estás herido");
+		} //FIN IF_ELSE
+	} //FIN METODO curarse()
 
 } //FIN CLASE
