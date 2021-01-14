@@ -15,6 +15,7 @@ class TestSurvivor {
 	}
 	@Test
 	void testObjeto(){
+		survi.setObjeto("");
 		assertEquals("No tienes ningún objeto", survi.getObjeto());
 		survi.setObjeto("Linterna");
 		assertEquals("Linterna", survi.getObjeto());
@@ -25,7 +26,6 @@ class TestSurvivor {
 	}
 	@Test
 	void testVida() {
-		int vidas=survi.getVida();
 		assertEquals(3, survi.getVida());
 	}
 
